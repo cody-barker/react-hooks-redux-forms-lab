@@ -1,22 +1,26 @@
 import { useState } from "react";
-import bandAdded from './bandsSlice'
+import { bandAdded } from './bandsSlice';
+import { useDispatch } from 'react-redux';
 
 function BandInput() {
-  const [text, setText] = useState("");
+  const [name, setname] = useState("");
+  const dispatch = useDispatch();
 
   function handleChange(e){
-    setText(e.target.value)
+    setname(e.target.value)
   }
 
   function handleSubmit(e) {
     e.preventDefault()
-    dispatchEvent(bandAdded(text))
+    dispatch(bandAdded(name))
+    setname("")
   }
 
   return (
   <div>
     <form onSubmit={handleSubmit}>
-      <input type="text" name="text" onChange={handleChange}>
+      <label>add band</label>
+      <input type="text" name="name" onChange={handleChange}>
       </input>
       <button type="submit">Submit</button>
     </form>

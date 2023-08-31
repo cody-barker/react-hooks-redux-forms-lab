@@ -5,8 +5,8 @@ import BandInput from './features/bands/BandInput'
 function App() {
   return (
     <div className="App">
-      <BandsContainer />
       <BandInput />
+      <BandsContainer />
     </div>
   );
 }

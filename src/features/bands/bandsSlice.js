@@ -14,6 +14,6 @@ const bandsSlice = createSlice({
 });
 
 // export the action creators
-export { bandAdded }
+export const { bandAdded } = bandsSlice.actions
 
 export default bandsSlice.reducer;

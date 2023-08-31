@@ -1,12 +1,17 @@
 import React from "react";
-import { useSelector, useDispatch } from "react-redux"
+import { useSelector } from "react-redux"
 
 function BandsContainer() {
-
   const bands = useSelector((state) => state.bands.entities);
-  const dispatch = useDispatch();
 
-  return <div>BandsContainer</div>;
+  return (
+    <div>
+      <ul>
+        {bands.map((band, index) => <li key={index}>{band}</li>)}
+      </ul>
+    </div>
+
+  )
 }
 
 export default BandsContainer;
